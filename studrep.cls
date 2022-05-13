@@ -107,7 +107,7 @@
   }}
 
 
-\geometry{paper=a4paper, includehead, left=2.5cm, right=2.5cm, top=1.7cm, bottom=2.5cm}
+\geometry{paper=a4paper, includehead, left=2.5cm, right=2.5cm, top=0.7cm, bottom=3.5cm}
 \let\headwidth=\textwidth
 
 \DeclareOption{microtyping}{
@@ -536,7 +536,7 @@ BoldItalicFont=FiraSans-BoldItalic.otf
 
 
 \if@loadgostseventhreetwo
-\geometry{paper=a4paper, includehead, left=2.5cm, right=1cm, top=1.8cm, bottom=2cm}
+\geometry{paper=a4paper, includehead, left=2.5cm, right=1cm, top=0.8cm, bottom=3cm}
 \let\headwidth=\textwidth
 \fi
 
@@ -553,8 +553,8 @@ BoldItalicFont=FiraSans-BoldItalic.otf
 
 \if@loadgostseventhreetwo
 
-\captionsetup[figure]{labelformat=simple,labelsep=ddash,font=small,labelfont={small},textfont={small},format=hang,margin=3ex,justification=justified,singlelinecheck=false}
-\captionsetup[table]{format=hang,labelsep=ddash,singlelinecheck=on,font={small},labelfont={small},textfont={small},labelfont={normalfont},justification=justified,skip=0.2ex}
+\captionsetup[figure]{labelformat=simple,labelsep=ddash,font=normal,labelfont={normal},textfont={normal},format=plain,margin=3ex,justification=centering,singlelinecheck=false,skip=0.7em,position=below}
+\captionsetup[table]{format=plain,labelsep=ddash,singlelinecheck=off,font={normal},labelfont={normal},textfont={normal},labelfont={normalfont},justification=raggedright,skip=5em,position=top}
 % \captionsetup[table]{format=plain,labelsep=newline,singlelinecheck=off,justification=Centering} %%%% THIS IS just CENTERED
   \renewcommand\tablename{Таблица}
   \renewcommand\figurename{Рисунок}
