@@ -306,6 +306,7 @@ BoldItalicFont=FiraSans-BoldItalic.otf
   \renewcommand{\appendices}{%
     \renewcommand{\thechapter}{\Asbuk{chapter}}
     \setcounter{chapter}{0}
+    \def\su@chapspace{}
     \renewcommand\chaptername{ПРИЛОЖЕНИЕ}
     \renewcommand{\chapter@su@name}{ПРИЛОЖЕНИЕ}
     %\renewcommand\cftchappresnum{\chapter@su@name~}
@@ -383,6 +384,8 @@ BoldItalicFont=FiraSans-BoldItalic.otf
  \fi
 \fi
 
+\def\su@chapspace{\hspace{1.27cm}}
+
 \def\@makechapterhead#1{%
   {\raggedright \su@chapter@font
     \@hangfrom{%
@@ -395,7 +398,7 @@ BoldItalicFont=FiraSans-BoldItalic.otf
          \else
            \@chapapp\space
          \fi
-         \hspace{1.27cm}\thechapter\hbox to 0.3em {}  % Trimmed here
+         \su@chapspace\thechapter\hbox to 0.3em {}  % Trimmed here
         \nobreak
       \fi
     }%
