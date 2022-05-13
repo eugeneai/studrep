@@ -26,7 +26,7 @@
 
 % \ExplSyntaxOn
 
-\LoadClass{scrreprt}
+\LoadClass[14pt]{scrreprt}
 
 \RequirePackage{iftex}
 \RequirePackage{etoolbox}
@@ -68,7 +68,8 @@
 \DeclareMathAlphabet{\mathbfit}{OML}{cmm}{b}{it} % stub
 \def\LaTeXsys{\LaTeX2e}
 \else
-\defaultfontfeatures{Ligatures={TeX,Required},Scale=MatchLowercase}
+  \defaultfontfeatures{Ligatures={TeX,Required},
+    Scale=MatchLowercase}
 \def\LaTeXsys{\LuaLaTeX}
 \fi
 \def\su@colonsize{\small}
@@ -143,11 +144,6 @@
 }
 \providecommand{\thechapter}{}
 \providecommand{\chaptermark}{}
-
-\DeclareOption{14pt}{
-\renewcommand\su@scale{1.1667}
-\renewcommand\baselinestretch{1.3} % WORKAROUND
-}
 
 \def\su@set@cambriamathfont{\setmathfont[
 ]{Cambria Math}%
@@ -323,7 +319,7 @@ BoldItalicFont=FiraSans-BoldItalic.otf
                     \else%
                       \addcontentsline{toc}{chapter}{#1}%
                     \fi%
-                    $ $\chaptermark{#1}%
+                    \chaptermark{#1}%
                     \addtocontents{lof}{\protect\addvspace{10\p@}}%
                     \addtocontents{lot}{\protect\addvspace{10\p@}}%
                     \if@twocolumn
@@ -368,7 +364,7 @@ BoldItalicFont=FiraSans-BoldItalic.otf
 }
 }
 
-\ExecuteOptions{14pt,times,cambriamath,%
+\ExecuteOptions{times,asanamath,%
   firacode,smalltitles,listbib,%
   732,microtyping,final}
 
@@ -388,7 +384,7 @@ BoldItalicFont=FiraSans-BoldItalic.otf
 \fi
 
 \def\@makechapterhead#1{%
-  {\parindent \z@ \raggedright \su@chapter@font
+  {\raggedright \su@chapter@font
     \@hangfrom{%
     \ifnum \c@secnumdepth >\m@ne
         \su@chapter@font@size \su@chapter@font%
@@ -399,9 +395,9 @@ BoldItalicFont=FiraSans-BoldItalic.otf
          \else
            \@chapapp\space
          \fi
-         \thechapter\hbox to 0.3em {}  % Trimmed here
+         \hspace{1.27cm}\thechapter\hbox to 0.3em {}  % Trimmed here
         \nobreak
-    \fi
+      \fi
     }%
     {\interlinepenalty\@M\hyphenpenalty\@M
     \su@chapter@font@size \su@chapter@font \su@trans@func #1\par\nobreak

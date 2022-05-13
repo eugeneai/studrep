@@ -1,21 +1,9 @@
 
-\documentclass[final]{studrep}
-% \usepackage[english,russian]{babel}
-
-% TODO: Do something
-% https://www.overleaf.com/read/fkzbbcxxrxvz
-% This was edited locally
-% And this was edited on the server
-
-% \RequirePackage{polyglossia}
-% \setotherlanguage{english}
-% \setdefaultlanguage{russian}
-
-%%%% \RequirePackage[times,firacode,732,smalltitles,listbib,asanamath]{subook}
-
+\documentclass{studrep}
 
 \RequirePackage{tabularx}
 % \RequirePackage{grphicx}
+
 \graphicspath{{pics/}}
 
 % \usepackage{showframe}
@@ -48,7 +36,7 @@
 
 \vfill
 \begin{center}
-  \textbf{ОТЧЕТ}
+  \textbf{\large ОТЧЕТ}
 \vspace{1em}
 
 о производственной практике на тему: % <<Разработка WEB-приложений>>
@@ -114,26 +102,7 @@ CREATE TABLE Persons (
 \caption{Скрипт SQL для создания таблицы Persons}\label{fig:crate-table}
 \end{figure}
 
-
-\begin{listing}[htbp]
-\begin{center}
-
-{\footnotesize
-\begin{verbatim}
-CREATE TABLE Persons (
-    PersonID int,
-    LastName varchar(255),
-    FirstName varchar(255),
-    Address varchar(255),
-    City varchar(255)
-);
-\end{verbatim}}
-
-\end{center}
-\caption{Скрипт SQL для создания таблицы Persons}\label{fig:crate-table}
-\end{listing}
-
-\chapter{Тестирование ....}
+\chapter{Тестирование программной системы в нагруженной среде}
 
 Разработан набор тестов структуры БД (см.~\ref{sec:struct-bd} на стр.~\pageref{sec:struct-bd}).   Загрузка скрипта базы данных осуществляется при помощи команды \texttt{mysql}.  Дамп существующей БД выполняется командой \verb|mysql-dump|.
 
