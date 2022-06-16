@@ -361,7 +361,7 @@ BoldItalicFont=FiraSans-BoldItalic.otf
     \endgroup
     \fi}
 \def\rename@732{%
-\renewcommand{\bibname}{СПИСОК ИПОЛЬЗОВАННЫХ ИСТОЧНИКОВ}
+\renewcommand{\bibname}{СПИСОК ИСПОЛЬЗОВАННЫХ ИСТОЧНИКОВ}
 \renewcommand{\contentsname}{СОДЕРЖАНИЕ}
 \renewcommand{\chaptername}{}
 }
