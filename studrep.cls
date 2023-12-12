@@ -31,21 +31,38 @@
 \RequirePackage{iftex}
 \RequirePackage{etoolbox}
 \ifPDFTeX\relax
- \RequirePackage[utf8]{inputenc}
- \RequirePackage{times}
+  \RequirePackage[utf8]{inputenc}
+  \RequirePackage{times}
 \else
- \RequirePackage{luatextra}
+  \RequirePackage{luatextra}
+
+  %\RequirePackage{polyglossia}
+  %\setdefaultlanguage{russian}
+  %\setotherlanguages{english}
+  \defaultfontfeatures{Ligatures={TeX,Required},Scale=MatchLowercase}
+  \setmainfont[Scale=1,ItalicFont=timesi.ttf,BoldFont=timesbd.ttf,BoldItalicFont=timesbi.ttf]{times.ttf}
+  \setmonofont[Numbers=SlashedZero,Scale=1,ItalicFont=couri.ttf,BoldFont=courbd.ttf,BoldItalicFont=courbi.ttf,]{cour.ttf}
+  \setsansfont[Scale=1,ItalicFont=Fira Sans Italic,BoldFont=Fira Sans Bold,BoldItalicFont=Fira Sans Bold Italic,]{Fira Sans Regular}
+ \newfontfamily{\cyrillicfontrm}[Scale=1,ItalicFont=timesi.ttf,BoldFont=timesbd.ttf,BoldItalicFont=timesbi.ttf]{times.ttf}
+ \newfontfamily{\cyrillicfonttt}[Numbers=SlashedZero,Scale=1,ItalicFont=couri.ttf,BoldFont=courbd.ttf,BoldItalicFont=courbi.ttf,]{cour.ttf}
+  \newfontfamily{\cyrillicfontdf}[Scale=1,ItalicFont=Fira Sans Italic,BoldFont=Fira Sans Bold,BoldItalicFont=Fira Sans Bold Italic,]{Fira Sans Regular}
 \fi
+
+%\let\headwidth=\textwidth
+\geometry{paper=a4paper,includehead, left=1.5cm, right=1.5cm, top=0.0cm, bottom=1.5cm}
+\setlength{\parindent}{1.24cm}
+
 \RequirePackage[english,russian]{babel}
 \RequirePackage{amssymb,amsmath,amsfonts}
 \@ifpackageloaded{amsthm}{}{
 \RequirePackage{ntheorem}
 }
 \RequirePackage{caption}
-\RequirePackage{listings}
+% \RequirePackage{listings}
 
 \RequirePackage{geometry}
-\RequirePackage{longtable}
+% \RequirePackage{longtable}
+\RequirePackage{tabularray}
 \RequirePackage{fancyhdr}
 \RequirePackage{indentfirst}
 \RequirePackage{pageslts}
@@ -560,6 +577,7 @@ BoldItalicFont=FiraSans-BoldItalic.otf
 
 \captionsetup[figure]{labelformat=simple,labelsep=ddash,font=normal,labelfont={normal},textfont={normal},format=plain,margin=3ex,justification=centering,singlelinecheck=false,skip=0.7em,position=below}
 \captionsetup[lstlisting]{labelformat=simple,labelsep=ddash,font=normal,labelfont={normal},textfont={normal},format=plain,margin=3ex,justification=centering,singlelinecheck=false,skip=0.7em,position=below}
+\captionsetup[listing]{labelformat=simple,labelsep=ddash,font=normal,labelfont={normal},textfont={normal},format=plain,margin=3ex,justification=centering,singlelinecheck=false,skip=0.7em,position=below}
 \captionsetup[table]{format=plain,labelsep=ddash,singlelinecheck=off,font={normal},labelfont={normal},textfont={normal},labelfont={normalfont},justification=raggedright,skip=5em,position=top}
 % \captionsetup[table]{format=plain,labelsep=newline,singlelinecheck=off,justification=Centering} %%%% THIS IS just CENTERED
   \renewcommand\tablename{Таблица}
