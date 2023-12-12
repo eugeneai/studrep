@@ -27,6 +27,8 @@
 % \ExplSyntaxOn
 
 \LoadClass[14pt]{scrreprt}
+\RequirePackage{silence}
+\WarningFilter{biblatex}{Patching footnotes failed}
 
 \RequirePackage{iftex}
 \RequirePackage{etoolbox}
@@ -58,7 +60,8 @@
     BoldItalicFont=Fira Sans Bold Italic,]{Fira Sans Regular}
 \fi
 
-%\let\headwidth=\textwidth
+% \let\headwidth=\textwidth
+\RequirePackage[a4paper]{geometry}
 \geometry{paper=a4paper,includehead, left=1.5cm, right=1.5cm, top=0.0cm, bottom=1.5cm}
 \setlength{\parindent}{1.24cm}
 
@@ -68,7 +71,7 @@
 \RequirePackage{ntheorem}
 }
 \RequirePackage{caption}
-% \RequirePackage{listings}
+\RequirePackage{listings}
 
 \RequirePackage{geometry}
 % \RequirePackage{longtable}
