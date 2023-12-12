@@ -40,12 +40,22 @@
   %\setdefaultlanguage{russian}
   %\setotherlanguages{english}
   \defaultfontfeatures{Ligatures={TeX,Required},Scale=MatchLowercase}
-  \setmainfont[Scale=1,ItalicFont=timesi.ttf,BoldFont=timesbd.ttf,BoldItalicFont=timesbi.ttf]{times.ttf}
-  \setmonofont[Numbers=SlashedZero,Scale=1,ItalicFont=couri.ttf,BoldFont=courbd.ttf,BoldItalicFont=courbi.ttf,]{cour.ttf}
-  \setsansfont[Scale=1,ItalicFont=Fira Sans Italic,BoldFont=Fira Sans Bold,BoldItalicFont=Fira Sans Bold Italic,]{Fira Sans Regular}
- \newfontfamily{\cyrillicfontrm}[Scale=1,ItalicFont=timesi.ttf,BoldFont=timesbd.ttf,BoldItalicFont=timesbi.ttf]{times.ttf}
- \newfontfamily{\cyrillicfonttt}[Numbers=SlashedZero,Scale=1,ItalicFont=couri.ttf,BoldFont=courbd.ttf,BoldItalicFont=courbi.ttf,]{cour.ttf}
-  \newfontfamily{\cyrillicfontdf}[Scale=1,ItalicFont=Fira Sans Italic,BoldFont=Fira Sans Bold,BoldItalicFont=Fira Sans Bold Italic,]{Fira Sans Regular}
+  \setmainfont[Scale=1,
+    ItalicFont=timesi.ttf,BoldFont=timesbd.ttf,
+    BoldItalicFont=timesbi.ttf]{times.ttf}
+  \setmonofont[Numbers=SlashedZero,Scale=1,
+    ItalicFont=couri.ttf,BoldFont=courbd.ttf,
+    BoldItalicFont=courbi.ttf,]{cour.ttf}
+  \setsansfont[Scale=1,ItalicFont=Fira Sans Italic,
+    BoldFont=Fira Sans Bold,BoldItalicFont=Fira Sans Bold Italic,]{Fira Sans Regular}
+  \newfontfamily{\cyrillicfontrm}[Scale=1,
+    ItalicFont=timesi.ttf,BoldFont=timesbd.ttf,
+    BoldItalicFont=timesbi.ttf]{times.ttf}
+  \newfontfamily{\cyrillicfonttt}[Numbers=SlashedZero,
+    Scale=1,ItalicFont=couri.ttf,BoldFont=courbd.ttf,BoldItalicFont=courbi.ttf,]{cour.ttf}
+  \newfontfamily{\cyrillicfontdf}[Scale=1,
+    ItalicFont=Fira Sans Italic,BoldFont=Fira Sans Bold,
+    BoldItalicFont=Fira Sans Bold Italic,]{Fira Sans Regular}
 \fi
 
 %\let\headwidth=\textwidth
