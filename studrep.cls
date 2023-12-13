@@ -589,8 +589,8 @@ BoldItalicFont=FiraSans-BoldItalic.otf
 \if@loadgostseventhreetwo
 
 \captionsetup[figure]{labelformat=simple,labelsep=ddash,font=normal,labelfont={normal},textfont={normal},format=plain,margin=3ex,justification=centering,singlelinecheck=false,skip=0.7em,position=below}
-\captionsetup[lstlisting]{labelformat=simple,labelsep=ddash,font=normal,labelfont={normal},textfont={normal},format=plain,margin=3ex,justification=centering,singlelinecheck=false,skip=0.7em,position=below}
-\captionsetup[listing]{labelformat=simple,labelsep=ddash,font=normal,labelfont={normal},textfont={normal},format=plain,margin=3ex,justification=centering,singlelinecheck=false,skip=0.7em,position=below}
+\captionsetup[lstlisting]{labelformat=simple,labelsep=ddash,font=normal,labelfont={normal},textfont={normal},format=plain,margin=3ex,justification=centering,singlelinecheck=false,skip=0.7em,position=top}
+\captionsetup[listing]{labelformat=simple,labelsep=ddash,font=normal,labelfont={normal},textfont={normal},format=plain,margin=3ex,justification=centering,singlelinecheck=false,skip=0.7em,position=top}
 \captionsetup[table]{format=plain,labelsep=ddash,singlelinecheck=off,font={normal},labelfont={normal},textfont={normal},labelfont={normalfont},justification=raggedright,skip=5em,position=top}
 % \captionsetup[table]{format=plain,labelsep=newline,singlelinecheck=off,justification=Centering} %%%% THIS IS just CENTERED
   \renewcommand\tablename{Таблица}
@@ -605,6 +605,8 @@ BoldItalicFont=FiraSans-BoldItalic.otf
 \else
 
 \captionsetup[figure]{labelformat=simple,labelsep=period,font=small,labelfont={bf,small},textfont={small,it},format=hang,margin=3ex,justification=justified,singlelinecheck=false}
+%\captionsetup[lstlisting]{labelformat=simple,labelsep=ddash,font=normal,labelfont={normal},textfont={normal},format=plain,margin=3ex,justification=centering,singlelinecheck=false,skip=0.7em,position=top}
+%\captionsetup[listing]{labelformat=simple,labelsep=ddash,font=normal,labelfont={normal},textfont={normal},format=plain,margin=3ex,justification=centering,singlelinecheck=false,skip=0.7em,position=top}
 \captionsetup[table]{format=rightcenter,labelsep=periodnewline,singlelinecheck=on,font={normalfont},labelfont={small,bf},textfont={normalfont,it},justification=raggedleft,skip=0.2ex}
 \renewcommand{\chaptermark}[1]{\markboth{\MakeUppercase{\thechapter.\ #1}}{\MakeUppercase{\thechapter.\ #1}}}
 \renewcommand{\sectionmark}[1]{\markright{\MakeUppercase{\thesection.\ #1}}{}}
