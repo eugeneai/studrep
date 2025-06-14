@@ -311,7 +311,7 @@ BoldItalicFont=FiraSans-BoldItalic.otf
 \def\su@sec@size{\large}
 \def\su@subsec@size{\normalsize}
 \def\su@subsubsec@size{\normalsize}
-\renewcommand\su@chapter@font@size{\Large}
+\renewcommand\su@chapter@font@size{\large}
 % \hyphenpenalty=10000 % to prevent hyps in headers
 }
 
@@ -594,6 +594,9 @@ BoldItalicFont=FiraSans-BoldItalic.otf
 \captionsetup[listing]{labelformat=simple,labelsep=ddash,font=normal,labelfont={normal},textfont={normal},format=plain,margin=3ex,justification=centering,singlelinecheck=false,skip=0.7em,position=top}
 \captionsetup[table]{format=plain,labelsep=ddash,singlelinecheck=off,font={normal},labelfont={normal},textfont={normal},labelfont={normalfont},justification=raggedright,skip=5em,position=top}
 % \captionsetup[table]{format=plain,labelsep=newline,singlelinecheck=off,justification=Centering} %%%% THIS IS just CENTERED
+  \providecommand\listingname{Листинг}
+  \renewcommand\listingname{Листинг}
+  \renewcommand\lstlistingname{Листинг}
   \renewcommand\tablename{Таблица}
   \renewcommand\figurename{Рисунок}
   \renewcommand{\theequation}{\arabic{equation}}
