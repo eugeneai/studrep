@@ -26,7 +26,7 @@
 
 % \ExplSyntaxOn
 
-\LoadClass[14pt]{scrreprt}
+\LoadClass[fontsize=12pt]{scrreprt}
 \RequirePackage{silence}
 \WarningFilter{biblatex}{Patching footnotes failed}
 
@@ -334,8 +334,8 @@ BoldItalicFont=FiraSans-BoldItalic.otf
     \chapter{\bibname}%
     \@mkboth{\MakeUppercase{\bibname}}{\MakeUppercase{\bibname}}%
   }%
-  \providecommand{\appendices}{}
-  \renewcommand{\appendices}{%
+  \providecommand{\appendix}{}
+  \renewcommand{\appendix}{%
     \renewcommand{\thechapter}{\Asbuk{chapter}}
     \setcounter{chapter}{0}
     \def\su@chapspace{}
