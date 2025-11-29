@@ -399,6 +399,12 @@ BoldItalicFont=FiraSans-BoldItalic.otf
 }
 }
 
+\newif\if@tightheaders\@tightheadersfalse
+
+\DeclareOption{tightheaders}{
+  \@tightheaderstrue
+}
+
 \ExecuteOptions{times,asanamath,%
   firacode,smalltitles,listbib,%
   732,microtyping,final}
@@ -697,6 +703,26 @@ BoldItalicFont=FiraSans-BoldItalic.otf
 \rename@732
 }
 
+\if@tightheaders
+% Компактные отступы для секций (tightheaders)
+\renewcommand\section{\@startsection{section}{1}{\su@sec@indent}%
+                                   {-1ex \@plus -0.5ex \@minus -.2ex}%
+                                   {0.3em}%
+                                   {\su@sec@title@font\su@sec@size\bfseries\hyphenpenalty\@M\interlinepenalty=50}}
+\renewcommand\subsection{\@startsection{subsection}{2}{\su@sec@indent}%
+                                     {-0.9ex\@plus -0.5ex \@minus -.2ex}%
+                                     {0.3em}%
+                                     {\su@sec@title@font\su@subsec@size\bfseries\hyphenpenalty\@M\interlinepenalty=50}}
+\renewcommand\subsubsection{\@startsection{subsubsection}{3}{\su@sec@indent}%
+                                     {-0.7ex\@plus -0.5ex \@minus -.2ex}%
+                                     {0.3em}%
+                                     {\su@sec@title@font\su@subsubsec@size\bfseries\hyphenpenalty\@M\interlinepenalty=50}}
+\renewcommand\paragraph{\@startsection{paragraph}{4}{\z@}%
+                                    {0.7ex \@plus1ex \@minus.2ex}%
+                                    {0.3em}%
+                                    {\su@par@title@font\normalsize\bfseries}}
+\else
+% Стандартные отступы для секций
 \renewcommand\section{\@startsection{section}{1}{\su@sec@indent}%
                                    {-3.5ex \@plus -1ex \@minus -.2ex}%
                                    {2.3ex \@plus.2ex}%
@@ -713,10 +739,7 @@ BoldItalicFont=FiraSans-BoldItalic.otf
                                     {3.25ex \@plus1ex \@minus.2ex}%
                                     {-1em}%
                                     {\su@par@title@font\normalsize\bfseries}}
-\renewcommand\subparagraph{\@startsection{subparagraph}{5}{\parindent}%
-                                       {3.25ex \@plus1ex \@minus .2ex}%
-                                       {-1em}%
-                                      {\su@par@title@font\normalsize\bfseries}}
+\fi
 \if@loadgostseventhreetwo
 
 \renewcommand*{\@seccntformat}[1]{\csname the#1\endcsname ~~}
