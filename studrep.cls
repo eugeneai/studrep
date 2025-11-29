@@ -785,6 +785,30 @@ BoldItalicFont=FiraSans-BoldItalic.otf
     #2\IfValueT{#3}{\newline\footnotesize (#3)} \\
   }
 
+% Макрос для блоков "УТВЕРЖДАЮ"
+\NewDocumentCommand{\approvalblock}{m m m}{%
+    \begin{minipage}[t]{0.25\textwidth}
+        \raggedleft
+        {\mbox{}\hfill\textbf{УТВЕРЖДАЮ}\hfill\mbox{}} \\
+        #1 \\
+        #2 \\
+        \underline{\hspace{\linewidth}} \\[0.5em] % Линия для подписи
+        «\underline{\hspace{0.5cm}}» \underline{\hspace{2cm}} #3 г.
+    \end{minipage}%
+}
+
+% Вариант с настраиваемой шириной
+\NewDocumentCommand{\approvalblockx}{O{0.25\textwidth} m m m}{%
+    \begin{minipage}[t]{#1}
+        \raggedleft
+        {\mbox{}\hfill\textbf{УТВЕРЖДАЮ}\hfill\mbox{}} \\
+        #2 \\
+        #3 \\
+        \underline{\hspace{\linewidth}} \\[0.5em] % Линия для подписи
+        «\underline{\hspace{0.5cm}}» \underline{\hspace{2cm}} #4 г.
+    \end{minipage}%
+}
+
   \isu@defgeom{}
 \normalsize
 
