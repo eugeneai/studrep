@@ -76,6 +76,7 @@
 
 \RequirePackage{geometry}
 % \RequirePackage{longtable}
+\RequirePackage{tabularx}
 \RequirePackage{tabularray}
 \RequirePackage{fancyhdr}
 \RequirePackage{indentfirst}
@@ -730,13 +731,61 @@ BoldItalicFont=FiraSans-BoldItalic.otf
 \righthyphenmin=2
 \lefthyphenmin=2
 
+% Для подписей создадим свое окружение, так как стандартное \maketitle его не предоставляет
+\newcommand{\signature}[2]{
+    \begin{minipage}{0.4\textwidth}
+        \centering
+        \vspace{1.5cm} % Место для подписи
+        \underline{\hspace{5cm}} \\
+        (#1)
+    \end{minipage}\hfill
+    \begin{minipage}{0.4\textwidth}
+        \centering
+        \vspace{1.5cm} % Место для подписи
+        \underline{\hspace{5cm}} \\
+        (#2)
+    \end{minipage}
+}
 \fancypagestyle{plain}{%
 \fancyhf{} % clear all header and footer fields
 \fancyfoot[C]{\su@colonsize\thepage} % except the center
 \renewcommand{\headrulewidth}{0pt}
 \renewcommand{\footrulewidth}{0pt}}
 
-\isu@defgeom{}
+% Вариант с другим порядком: \performer{должность}{ФИО}[раздел]
+% Environment для списка исполнителей
+% Определяем команды на верхнем уровне
+% Простая среда для списка исполнителей
+\NewDocumentEnvironment{performers}{o}{%
+    \IfNoValueTF{#1}
+        {\section*{СПИСОК ИСПОЛНИТЕЛЕЙ}\vspace{1em}}
+        {}%
+    \par\small
+    \begin{center}
+    \begin{tabular}{p{0.4\textwidth}p{0.3\textwidth}p{0.2\textwidth}}
+}{%
+    \end{tabular}
+    \end{center}
+}
+
+% Простые команды
+\newcommand{\performerheader}[1]{%
+    \multicolumn{3}{l}{\bfseries #1} \\[0.5em]
+}
+
+% \newcommand{\performer}[3][]{%
+%     #2 &
+%     \raisebox{-1ex}{\centering\underline{\hspace{5cm}}}\newline{\mbox{}\hfill\footnotesize подпись, дата\hfill\mbox{}} &
+%     #3\ifthenelse{\equal{#1}{}}{}{\newline\footnotesize (#1)} \\
+%   }
+
+\NewDocumentCommand{\performer}{m m o}{%
+    #1 &
+    \raisebox{-1ex}{\centering\underline{\hspace{5cm}}}\newline{\mbox{}\hfill\footnotesize подпись, дата\hfill\mbox{}} &
+    #2\IfValueT{#3}{\newline\footnotesize (#3)} \\
+  }
+
+  \isu@defgeom{}
 \normalsize
 
 %%% Local Variables:
